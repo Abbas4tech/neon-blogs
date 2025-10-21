@@ -41,6 +41,13 @@ export async function getUsersWithPagination(
     .orderBy(desc(users.createdAt));
 }
 
+export const getAllPosts = async () =>
+  await db.select().from(posts).orderBy(desc(posts.createdAt));
+
+export const getPostById = async (id: string) => {
+  const [post] = await db.select().from(posts).where(eq(posts.id, +id));
+  return post;
+};
 // UPDATE
 export async function updateUser(id: number, userData: Partial<User>) {
   const [user] = await db

@@ -17,7 +17,7 @@ export const usersRelations = relations(users, ({ many }) => ({
 }));
 
 export const insertUserSchema = createInsertSchema(users, {
-  email: z.string().email(),
+  email: z.email(),
   name: z.string().min(1),
 });
 
