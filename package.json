@@ -11,7 +11,9 @@
     "db:studio": "drizzle-kit studio",
     "db:generate": "drizzle-kit generate",
     "db:seed": "tsx src/scripts/seed.ts",
+    "db:seed:deploy": "npm run db:seed && tsx src/scripts/trigger-deploy.ts",
     "db:test-queries": "tsx src/scripts/test-queries.ts",
+    "db:test-queries:deploy": "npm run db:test-queries && tsx src/scripts/trigger-deploy.ts",
     "db:reset": "npm run db:push && npm run db:seed"
   },
   "dependencies": {
